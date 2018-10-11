@@ -1,14 +1,12 @@
-//
-// Created by enrique on 10/10/18.
-//
-
 
 #include <string>
 #include <map>
 
-// Compress a string to a list of output symbols.
-// The result will be written to the output iterator
-// starting at "result"; the final iterator is returned.
+
+/*Comprimir una cadena a una lista de símbolos de salida.
+ el resultado se escribirá en el iterador de salida
+ comenzando en "resultado"; Se devuelve el iterador final*/
+
 template <typename Iterator>
 Iterator compress(const std::string &uncompressed, Iterator result) {
     // Build the dictionary.
@@ -37,9 +35,9 @@ Iterator compress(const std::string &uncompressed, Iterator result) {
         *result++ = dictionary[w];
     return result;
 }
+/* Descomprime una lista de salida ks a una cadena.
+  "begin" y "end" deben formar un rango válido de ints*/
 
-// Decompress a list of output ks to a string.
-// "begin" and "end" must form a valid range of ints
 template <typename Iterator>
 std::string decompress(Iterator begin, Iterator end) {
     // Build the dictionary.
